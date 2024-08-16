@@ -1,9 +1,11 @@
 /**
- * Abstract class representing a generic storage service.
+ * Abstract class representing a generic storage.
  * @template T The type of the entity to be stored.
- * @template ID The type of the entity's ID. Defaults to `unknown`.
+ * @template ID The type of the entity's ID. Defaults to `string`.
  */
-export abstract class Storage<T, ID = unknown> {
+import { BaseEntity } from './base.entity';
+
+export abstract class BaseStorage<T extends BaseEntity, ID> {
   /**
    * Finds an entity by its ID.
    * @param id The ID of the entity to find.
@@ -16,7 +18,7 @@ export abstract class Storage<T, ID = unknown> {
    * @param data The entity to create.
    * @returns A promise that resolves to the created entity.
    */
-  abstract create(data: unknown): Promise<T>;
+  abstract create(data: Partial<T>): Promise<T>;
 
   /**
    * Deletes an entity by its ID.
@@ -31,5 +33,5 @@ export abstract class Storage<T, ID = unknown> {
    * @param data The data for updating the entity.
    * @returns A promise that resolves to the updated entity.
    */
-  abstract update(id: ID, data: unknown): Promise<T>;
+  abstract update(id: ID, data: Partial<T>): Promise<T>;
 }
