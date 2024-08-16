@@ -3,8 +3,8 @@
 import 'reflect-metadata';
 
 import { plainToInstance } from 'class-transformer';
-import { ValidationError } from '../errors';
 import { validateSync } from 'class-validator';
+import { ValidationError } from './validation.error';
 
 /**
  * Abstract base class for Data Transfer Objects (DTOs).
