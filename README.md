@@ -37,3 +37,4 @@ $ yarn run test:cov
 ## Dependencies
 - [class-validator](https://docs.nestjs.com/techniques/validation)
 - [class-transformer](https://docs.nestjs.com/techniques/validation)
+- [@nestjs/config](https://docs.nestjs.com/techniques/configuration)
