@@ -5,7 +5,13 @@ Nest mongo starter project
 ## Installation
 
 ```bash
+# install dependencies
 $ yarn install
+```
+
+```bash
+# configure git hooks
+$ yarn init-hooks
 ```
 
 ## Running the app
