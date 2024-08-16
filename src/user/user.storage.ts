@@ -1,5 +1,5 @@
 import { MongoStorage } from '../db/mongo';
-import { UserEntity } from './user.entity';
+import { UserEntity } from './entities/user.entity';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 

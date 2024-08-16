@@ -1,6 +1,6 @@
 import { Document, Types } from 'mongoose';
 import { Prop, SchemaFactory } from '@nestjs/mongoose';
-import { BaseEntity } from '../../shared/storage';
+import { BaseEntity } from '../../../shared/storage';
 
 export interface BaseMongoEntity extends BaseEntity {
   _id: Types.ObjectId;

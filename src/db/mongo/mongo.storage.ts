@@ -1,5 +1,5 @@
 import { BaseStorage } from '../../shared/storage';
-import { MongoEntity } from './mongo.entity';
+import { MongoEntity } from './entities/mongo.entity';
 import { Model, Types } from 'mongoose';
 
 /**

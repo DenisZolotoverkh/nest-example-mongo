@@ -1,6 +1,6 @@
 import { Model } from 'mongoose';
 import { UserStorage } from './user.storage';
-import { UserEntity, UserSchema } from './user.entity';
+import { UserEntity, UserSchema } from './entities/user.entity';
 import { Test, TestingModule } from '@nestjs/testing';
 import { ConfigModule } from '@nestjs/config';
 import { getModelToken, MongooseModule } from '@nestjs/mongoose';

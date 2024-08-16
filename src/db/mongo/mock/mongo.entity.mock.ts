@@ -1,4 +1,4 @@
-import { BaseMongoEntity, MongoEntity } from '../mongo.entity';
+import { BaseMongoEntity, MongoEntity } from '../entities/mongo.entity';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Types } from 'mongoose';
 
