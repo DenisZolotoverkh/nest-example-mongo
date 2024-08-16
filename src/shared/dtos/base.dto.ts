@@ -21,7 +21,7 @@ export abstract class BaseDto {
    * @returns An instance of the DTO, fully populated and validated.
    * @throws ValidationError - If validation errors are found.
    */
-  static create<T>(this: new () => T, input: Partial<T>): T {
+  static create<T extends object>(this: new () => T , input: Partial<T>): T {
     const data = plainToInstance(this, input, { strategy: 'excludeAll' });
     const errors = validateSync(data);
     if (errors.length > 0) throw new ValidationError(errors.toString());
