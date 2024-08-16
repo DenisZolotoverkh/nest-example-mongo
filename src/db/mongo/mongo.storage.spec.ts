@@ -1,7 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken, MongooseModule } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { MongoEntityMock, mongoEntityMockExample, MongoEntityMockSchema, MongoStorageMock } from './mock';
+import {
+  MongoEntityMock,
+  mongoEntityMockExample,
+  MongoEntityMockSchema,
+  MongoStorageMock,
+} from './mock';
 import { TestConnectionConfig } from './configs';
 import { ConfigModule } from '@nestjs/config';
 
@@ -20,14 +25,17 @@ describe('Mongo Storage', () => {
           imports: [ConfigModule],
           useClass: TestConnectionConfig,
         }),
-        MongooseModule.forFeature(
-          [{ name: MongoEntityMock.name, schema: MongoEntityMockSchema }]),
+        MongooseModule.forFeature([
+          { name: MongoEntityMock.name, schema: MongoEntityMockSchema },
+        ]),
       ],
       providers: [MongoStorageMock],
     }).compile();
 
     storage = module.get<MongoStorageMock>(MongoStorageMock);
-    model = module.get<Model<MongoEntityMock>>(getModelToken(MongoEntityMock.name));
+    model = module.get<Model<MongoEntityMock>>(
+      getModelToken(MongoEntityMock.name),
+    );
   });
 
   afterEach(async () => {

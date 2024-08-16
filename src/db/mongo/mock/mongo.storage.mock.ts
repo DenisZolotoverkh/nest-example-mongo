@@ -6,7 +6,8 @@ import { MongoEntityMock } from './mongo.entity.mock';
 export class MongoStorageMock extends MongoStorage<MongoEntityMock> {
   constructor(
     @InjectModel(MongoEntityMock.name)
-    private readonly userModel: Model<MongoEntityMock>) {
+    private readonly userModel: Model<MongoEntityMock>,
+  ) {
     super();
     this.entityModel = userModel;
   }

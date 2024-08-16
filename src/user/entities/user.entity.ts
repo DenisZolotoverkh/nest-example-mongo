@@ -1,7 +1,7 @@
-import { MongoEntity } from '../../db/mongo';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { User } from '../user';
 import { Types } from 'mongoose';
+import { MongoEntity } from '../../db/mongo/entities/mongo.entity';
 
 @Schema({ collection: 'user' })
 export class UserEntity extends MongoEntity implements User {

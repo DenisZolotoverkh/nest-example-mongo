@@ -1,18 +1,20 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { MongooseModuleOptions, MongooseOptionsFactory } from '@nestjs/mongoose';
+import {
+  MongooseModuleOptions,
+  MongooseOptionsFactory,
+} from '@nestjs/mongoose';
 import { BaseDto } from '../../../shared/dtos';
 import { Expose } from 'class-transformer';
 import { IsNotEmpty } from 'class-validator';
 import { BaseConfig } from '../../../shared/config';
 import { IsMongoUri } from '../../../shared/validators';
 
-
 interface BaseEnvironmentVariables {
   DB_MONGO_URI: string;
 }
 
-class EnvironmentVariables extends BaseDto<BaseEnvironmentVariables> implements BaseEnvironmentVariables {
+class EnvironmentVariables extends BaseDto implements BaseEnvironmentVariables {
   @Expose()
   @IsMongoUri()
   @IsNotEmpty()
@@ -20,11 +22,16 @@ class EnvironmentVariables extends BaseDto<BaseEnvironmentVariables> implements 
 }
 
 @Injectable()
-export class ConnectionConfig extends BaseConfig<EnvironmentVariables> implements MongooseOptionsFactory {
+export class ConnectionConfig
+  extends BaseConfig<EnvironmentVariables>
+  implements MongooseOptionsFactory {
   constructor(private configService: ConfigService<BaseEnvironmentVariables>) {
-    super({
-      DB_MONGO_URI: configService.get('DB_MONGO_URI'),
-    }, EnvironmentVariables);
+    super(
+      {
+        DB_MONGO_URI: configService.get('DB_MONGO_URI'),
+      },
+      EnvironmentVariables,
+    );
   }
 
   createMongooseOptions(): MongooseModuleOptions {

@@ -7,12 +7,15 @@ export interface BaseMongoEntityMock extends BaseMongoEntity {
 }
 
 @Schema()
-export class MongoEntityMock extends MongoEntity implements BaseMongoEntityMock {
+export class MongoEntityMock
+  extends MongoEntity
+  implements BaseMongoEntityMock {
   @Prop({ type: String })
   mockProperty: string;
 }
 
-export const MongoEntityMockSchema = SchemaFactory.createForClass(MongoEntityMock);
+export const MongoEntityMockSchema =
+  SchemaFactory.createForClass(MongoEntityMock);
 
 export const mongoEntityMockExample: BaseMongoEntityMock = {
   _id: new Types.ObjectId(),

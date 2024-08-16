@@ -12,8 +12,7 @@ import { ValidationError } from './validation.error';
  *
  * @typeParam T - The type of the DTO extending this base class.
  */
-export abstract class BaseDto<T> {
-
+export abstract class BaseDto {
   /**
    * Creates an instance of the DTO, populates it with the provided input,
    * and validates the data. If validation fails, it throws a `ValidationError`.
@@ -22,7 +21,7 @@ export abstract class BaseDto<T> {
    * @returns An instance of the DTO, fully populated and validated.
    * @throws ValidationError - If validation errors are found.
    */
-  static create<T extends object>(this: new () => T, input: Partial<T>): T {
+  static create<T>(this: new () => T, input: Partial<T>): T {
     const data = plainToInstance(this, input, { strategy: 'excludeAll' });
     const errors = validateSync(data);
     if (errors.length > 0) throw new ValidationError(errors.toString());

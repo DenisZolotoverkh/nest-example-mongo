@@ -18,8 +18,9 @@ describe('User Storage', () => {
           imports: [ConfigModule],
           useClass: TestConnectionConfig,
         }),
-        MongooseModule.forFeature(
-          [{ name: UserEntity.name, schema: UserSchema }]),
+        MongooseModule.forFeature([
+          { name: UserEntity.name, schema: UserSchema },
+        ]),
       ],
       providers: [UserStorage],
     }).compile();
