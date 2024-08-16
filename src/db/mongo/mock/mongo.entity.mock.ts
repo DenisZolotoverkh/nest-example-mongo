@@ -9,7 +9,8 @@ export interface BaseMongoEntityMock extends BaseMongoEntity {
 @Schema()
 export class MongoEntityMock
   extends MongoEntity
-  implements BaseMongoEntityMock {
+  implements BaseMongoEntityMock
+{
   @Prop({ type: String })
   mockProperty: string;
 }

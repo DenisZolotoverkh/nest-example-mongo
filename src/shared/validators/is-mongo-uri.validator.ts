@@ -19,7 +19,7 @@ export class IsMongoUriConstraint implements ValidatorConstraintInterface {
 }
 
 export function IsMongoUri(validationOptions?: ValidationOptions) {
-  return function(object: unknown, propertyName: string) {
+  return function (object: unknown, propertyName: string) {
     registerDecorator({
       target: object.constructor,
       propertyName: propertyName,

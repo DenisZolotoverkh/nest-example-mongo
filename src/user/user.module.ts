@@ -12,5 +12,4 @@ import { UserEntity, UserSchema } from './entities/user.entity';
   providers: [UserStorage],
   exports: [UserStorage],
 })
-export class UserModule {
-}
+export class UserModule {}

@@ -7,8 +7,10 @@ import { Model, Types } from 'mongoose';
  * @template T The type of the entity to be stored.
  */
 
-export class MongoStorage<T extends MongoEntity> extends BaseStorage<T,
-  Types.ObjectId> {
+export class MongoStorage<T extends MongoEntity> extends BaseStorage<
+  T,
+  Types.ObjectId
+> {
   protected entityModel: Model<T>;
 
   async create(data: Partial<T>): Promise<T> {

@@ -24,7 +24,8 @@ class EnvironmentVariables extends BaseDto implements BaseEnvironmentVariables {
 @Injectable()
 export class ConnectionConfig
   extends BaseConfig<EnvironmentVariables>
-  implements MongooseOptionsFactory {
+  implements MongooseOptionsFactory
+{
   constructor(private configService: ConfigService<BaseEnvironmentVariables>) {
     super(
       {
