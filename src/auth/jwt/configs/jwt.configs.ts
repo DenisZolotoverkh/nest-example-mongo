@@ -1,4 +1,7 @@
-import { JwtModuleOptions, JwtOptionsFactory } from '@nestjs/jwt/dist/interfaces/jwt-module-options.interface';
+import {
+  JwtModuleOptions,
+  JwtOptionsFactory,
+} from '@nestjs/jwt/dist/interfaces/jwt-module-options.interface';
 import { BaseConfig } from '../../../shared/config';
 import { BaseDto } from '../../../shared/dtos';
 import { Expose } from 'class-transformer';
@@ -21,9 +24,9 @@ class EnvironmentVariables extends BaseDto implements BaseEnvironmentVariables {
 @Injectable()
 export class JwtConfigs
   extends BaseConfig<EnvironmentVariables>
-  implements JwtOptionsFactory {
-  constructor(
-    private configService: ConfigService<BaseEnvironmentVariables>) {
+  implements JwtOptionsFactory
+{
+  constructor(private configService: ConfigService<BaseEnvironmentVariables>) {
     super(
       {
         AUTH_JWT_SECRET: configService.get('AUTH_JWT_SECRET'),
