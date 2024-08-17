@@ -1,6 +1,6 @@
 import { BaseStorage } from '../../shared/storage';
 import { MongoEntity } from './entities';
-import { Model, Types } from 'mongoose';
+import { Error, Model, Types } from 'mongoose';
 
 /**
  * Class representing a generic MongoDB storage.
@@ -37,3 +37,5 @@ export class MongoStorage<T extends MongoEntity> extends BaseStorage<
     await this.entityModel.deleteOne({ _id: id }).exec();
   }
 }
+
+export class AlreadyExistsError extends Error {}

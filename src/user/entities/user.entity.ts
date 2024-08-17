@@ -5,7 +5,7 @@ import { MongoEntity } from '../../db/mongo/entities';
 
 @Schema({ collection: 'user' })
 export class UserEntity extends MongoEntity implements User {
-  @Prop({ required: true, type: String })
+  @Prop({ required: true, type: String, unique: true })
   email: string;
 
   @Prop({ required: true, type: String })
@@ -13,6 +13,7 @@ export class UserEntity extends MongoEntity implements User {
 }
 
 export const UserSchema = SchemaFactory.createForClass(UserEntity);
+UserSchema.index({ email: 1 }, { unique: true });
 
 export const userEntityExample: User = {
   _id: new Types.ObjectId(),
