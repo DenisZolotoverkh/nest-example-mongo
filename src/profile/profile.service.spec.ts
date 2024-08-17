@@ -7,6 +7,7 @@ import { Types } from 'mongoose';
 
 describe('Profile service', () => {
   let service: ProfileService;
+
   const mockUserStorage = {
     findById: jest.fn(),
   };
