@@ -7,6 +7,9 @@ import { MongoEntity } from '../../db/mongo/entities';
 export class UserEntity extends MongoEntity implements User {
   @Prop({ required: true, type: String })
   email: string;
+
+  @Prop({ required: true, type: String })
+  password: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(UserEntity);
@@ -14,5 +17,6 @@ export const UserSchema = SchemaFactory.createForClass(UserEntity);
 export const userEntityExample: User = {
   _id: new Types.ObjectId(),
   email: 'mail@example.com',
+  password: 'mockPassword',
   createdAt: new Date(),
 };
