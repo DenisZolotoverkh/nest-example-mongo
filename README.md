@@ -51,3 +51,4 @@ $ yarn run test:cov
 - [@nestjs/mongoose](https://docs.nestjs.com/techniques/mongodb)
 - [mongoose](https://docs.nestjs.com/techniques/mongodb)
 - [@nestjs/swagger](https://docs.nestjs.com/openapi/introduction)
+- [@nestjs/jwt](https://docs.nestjs.com/security/authentication)
