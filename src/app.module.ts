@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user';
 import { ConfigModule } from '@nestjs/config';
+import { JwtAuthModule } from './auth/jwt';
 
 @Module({
   imports: [
@@ -10,6 +11,7 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
     }),
     UserModule,
+    JwtAuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
