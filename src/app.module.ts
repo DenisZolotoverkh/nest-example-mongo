@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { UserModule } from './user';
 import { ConfigModule } from '@nestjs/config';
 import { JwtAuthModule } from './auth/jwt';
-import { RegistrationModule } from './registration';
+import { LoginModule } from './login';
 
 @Module({
   imports: [
@@ -13,7 +13,7 @@ import { RegistrationModule } from './registration';
     }),
     UserModule,
     JwtAuthModule,
-    RegistrationModule,
+    LoginModule,
   ],
   controllers: [AppController],
   providers: [AppService],
