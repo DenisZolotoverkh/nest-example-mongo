@@ -14,7 +14,8 @@ import {
 export class LoginController {
   constructor(private readonly registrationService: LoginService) {}
 
-  @Post('registration')
+
+  @Post('register')
   @ApiCreatedResponse({ description: 'Registration successful' })
   @ApiBadRequestResponse({ description: 'Validation error' })
   async register(@Body() dto: RegistrationDto): Promise<MessageDto> {
